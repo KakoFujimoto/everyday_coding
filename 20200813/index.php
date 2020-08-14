@@ -3,13 +3,13 @@ session_start();
 require('dbconnect.php');
 
 //CSRF対策
-function setToken()
+function setToken(): void
 {
     $token = sha1(uniqid(mt_rand(), true));
     $_SESSION['token'] = $token;
 }
 
-function isCorrectToken()
+function isCorrectToken(): bool
 {
     if (!empty($_SESSION['token']) && ($_SESSION['token'] === $_POST['token'])) {
         return true;
@@ -22,7 +22,7 @@ function isCorrectToken()
 $name = $_POST['name'];
 $message = $_POST['message'];
 
-function insertPost($name, $message, PDO &$db)
+function insertPost(string $name, string $message, PDO &$db): void
 {
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['message']) && isset($_POST['name'])) {
 
@@ -49,7 +49,7 @@ function insertPost($name, $message, PDO &$db)
 }
 
 //htmlspecialchars短縮
-function h(string $s)
+function h(string $s): string
 {
     return htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
 }
