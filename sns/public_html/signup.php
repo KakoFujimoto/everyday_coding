@@ -2,8 +2,11 @@
 
 require_once(__DIR__ . '/../config/config.php');
 
-// echo 'login screen';
-// exit;
+$app = new MyApp\Controller\Signup();
+
+$app->run();
+
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -11,15 +14,15 @@ require_once(__DIR__ . '/../config/config.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
+    <title>Sign up</title>
 </head>
 
 <body>
-    <form action="" method="post">
+    <form action="" method="post" id="signp">
         <p><input type="text" name="email" placeholder="email"></p>
         <p><input type="password" name="password" placeholder="password"></p>
-        <p><input type="submit" value="login"></p>
-        <p><a href="signup.php">sign up</a></p>
+        <p><input type="submit" value="signup" onclick="document.getElementById('signup').submit();"></p>
+        <p><a href="login.php">login</a></p>
     </form>
 </body>
 
