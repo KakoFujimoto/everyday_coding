@@ -25,6 +25,9 @@ class Signup extends \MyApp\Controller
         } catch (\Myapp\Exception\InvalidPassword $e) {
             $this->setErrors('password', $e->getMessage());
         }
+
+        $this->setValues('email', $_POST['email']);
+
         if ($this->hasError()) {
             return;
         } else {

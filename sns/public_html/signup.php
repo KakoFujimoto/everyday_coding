@@ -19,7 +19,8 @@ $app->run();
 
 <body>
     <form action="" method="post" id="signp">
-        <p><input type="text" name="email" placeholder="email"></p>
+        <p><input type="text" name="email" placeholder="email" value="<?=
+                                                                            isset($app->getValues()->email) ? h($app->getValues()->email) : ''; ?>"></p>
         <p><?= h($app->getErrors('email')); ?></p>
         <p><input type="password" name="password" placeholder="password"></p>
         <p><?= h($app->getErrors('password')); ?></p>
