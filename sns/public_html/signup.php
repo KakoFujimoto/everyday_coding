@@ -26,6 +26,7 @@ $app->run();
         <p><?= h($app->getErrors('password')); ?></p>
         <p><input type="submit" value="signup" onclick="document.getElementById('signup').submit();"></p>
         <p><a href="login.php">login</a></p>
+        <input type="hidden" name="token" value="<?= h($_SESSION['token']); ?>">
     </form>
 </body>
 
