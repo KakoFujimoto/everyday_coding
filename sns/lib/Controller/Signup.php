@@ -31,6 +31,18 @@ class Signup extends \MyApp\Controller
         if ($this->hasError()) {
             return;
         } else {
+            try {
+                $userModel = new \MyApp\Model\User();
+                $userModel->create([
+                    'email' => $_POST['email'],
+                    'password' => $_POST['password'],
+                ]);
+            } catch (\Myapp\Exception\DuplicateEmail $e) {
+                $this->setErrors('email', $e->getMessage());
+                return;
+            }
+            header('Location:' . SITE_URL . '/login.php');
+            exit;
         }
     }
 
