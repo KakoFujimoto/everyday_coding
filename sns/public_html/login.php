@@ -15,11 +15,14 @@ require_once(__DIR__ . '/../config/config.php');
 </head>
 
 <body>
-    <form action="" method="post">
-        <p><input type="text" name="email" placeholder="email"></p>
+    <form action="" method="post" id="login">
+        <p><input type="text" name="email" placeholder="email" value="<?=
+                                                                            isset($app->getValues()->email) ? h($app->getValues()->email) : ''; ?>"></p>
         <p><input type="password" name="password" placeholder="password"></p>
-        <p><input type="submit" value="login"></p>
-        <p><a href="signup.php">sign up</a></p>
+        <p><input type="submit" value="login" onclick="document.getElementById('login').submit();"></p>
+        <p><?= h($app->getErrors('login')); ?></p>
+        <p><a href="signup.php">log in</a></p>
+        <input type="hidden" name="token" value="<?= h($_SESSION['token']); ?>">
     </form>
 </body>
 

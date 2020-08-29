@@ -31,7 +31,7 @@ class Login extends \MyApp\Controller
         } else {
             try {
                 $userModel = new \MyApp\Model\User();
-                $userModel->login([
+                $user = $userModel->login([
                     'email' => $_POST['email'],
                     'password' => $_POST['password'],
                 ]);
@@ -39,6 +39,9 @@ class Login extends \MyApp\Controller
                 $this->setErrors('login', $e->getMessage());
                 return;
             }
+            session_regenerate_id(true);
+            $_SESSION['me'] = $user;
+
             header('Location:' . SITE_URL);
             exit;
         }
