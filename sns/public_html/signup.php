@@ -18,7 +18,7 @@ $app->run();
 </head>
 
 <body>
-    <form action="" method="post" id="signp">
+    <form action="" method="post" id="signup">
         <p><input type="text" name="email" placeholder="email" value="<?=
                                                                             isset($app->getValues()->email) ? h($app->getValues()->email) : ''; ?>"></p>
         <p><?= h($app->getErrors('email')); ?></p>

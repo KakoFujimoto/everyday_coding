@@ -2,8 +2,9 @@
 
 require_once(__DIR__ . '/../config/config.php');
 
-// echo 'login screen';
-// exit;
+$app = new MyApp\Controller\Login();
+
+$app->run();
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -15,7 +16,7 @@ require_once(__DIR__ . '/../config/config.php');
 </head>
 
 <body>
-    <form action="" method="post" id="login">
+    <form action="index.php" method="post" id="login">
         <p><input type="text" name="email" placeholder="email" value="<?=
                                                                             isset($app->getValues()->email) ? h($app->getValues()->email) : ''; ?>"></p>
         <p><input type="password" name="password" placeholder="password"></p>
