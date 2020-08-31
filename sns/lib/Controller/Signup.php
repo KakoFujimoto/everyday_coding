@@ -7,7 +7,7 @@ class Signup extends \MyApp\Controller
     public function run()
     {
         if ($this->isLoggedIn()) {
-            header('Location:' . SITE_URL);
+            header('Location: ' . SITE_URL);
             exit;
         }
 
@@ -20,9 +20,9 @@ class Signup extends \MyApp\Controller
     {
         try {
             $this->_validate();
-        } catch (\Myapp\Exception\InvalidEmail $e) {
+        } catch (\MyApp\Exception\InvalidEmail $e) {
             $this->setErrors('email', $e->getMessage());
-        } catch (\Myapp\Exception\InvalidPassword $e) {
+        } catch (\MyApp\Exception\InvalidPassword $e) {
             $this->setErrors('password', $e->getMessage());
         }
 
@@ -37,18 +37,18 @@ class Signup extends \MyApp\Controller
                     'email' => $_POST['email'],
                     'password' => $_POST['password'],
                 ]);
-            } catch (\Myapp\Exception\DuplicateEmail $e) {
+            } catch (\MyApp\Exception\DuplicateEmail $e) {
                 $this->setErrors('email', $e->getMessage());
                 return;
             }
-            header('Location:' . SITE_URL . '/login.php');
+            header('Location: ' . SITE_URL . '/login.php');
             exit;
         }
     }
 
     private function _validate()
     {
-        if (!isset($_POST['token']) || ($_POST['token']) !== $_SESSION['token']) {
+        if (!isset($_POST['token']) || $_POST['token'] !== $_SESSION['token']) {
             echo "Invalid Token!";
             exit;
         }
