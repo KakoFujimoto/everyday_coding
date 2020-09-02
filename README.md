@@ -7,6 +7,8 @@
 
 - [入力した文字を出力するだけのプログラム（練習）](https://github.com/KakoFujimoto/everyday_coding/blob/master/20200811/20200811.php)
 
+- [標準入力から受け取った文字列を加工して出力するプログラム](https://github.com/KakoFujimoto/everyday_coding/blob/master/20200812/20200812.php)
+
 - 文字の置き換えをするプログラム
 - チェックボックスで選択したものを出力するプログラム
 - 関数のスコープを検証
