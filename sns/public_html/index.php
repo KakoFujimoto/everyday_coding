@@ -6,8 +6,8 @@ $app = new MyApp\Controller\Index();
 
 $app->run();
 
-
-var_dump($_SESSION['me']);
+// $app->me();
+// $app->getValues()->users;
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -20,11 +20,14 @@ var_dump($_SESSION['me']);
 
 <body>
     <form action="logout.php" method="post" id="logout">
-        xxxx@gmail.com <input type="submit" value="log out">
+        <?= h($app->me()->email); ?><input type="submit" value="log out">
         <input type="hidden" name="token" value="<?= h($_SESSION['token']); ?>">
     </form>
-    <h1>users</h1>
+    <h1>users(<?= count($app->getValues()->users); ?>)</h1>
     <ul>
+        <?php foreach ($app->getValues()->users as $user) : ?>
+            <li><?= h($user->email); ?></li>
+        <?php endforeach; ?>
         <li>dummy</li>
         <li>dummy</li>
         <li>dummy</li>
