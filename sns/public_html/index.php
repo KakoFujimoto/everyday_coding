@@ -28,9 +28,6 @@ $app->run();
         <?php foreach ($app->getValues()->users as $user) : ?>
             <li><?= h($user->email); ?></li>
         <?php endforeach; ?>
-        <li>dummy</li>
-        <li>dummy</li>
-        <li>dummy</li>
     </ul>
 </body>
 

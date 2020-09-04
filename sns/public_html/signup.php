@@ -24,8 +24,8 @@ $app->run();
         <p><?= h($app->getErrors('email')); ?></p>
         <p><input type="password" name="password" placeholder="password"></p>
         <p><?= h($app->getErrors('password')); ?></p>
-        <p><input type="submit" value="signup" onclick="document.getElementById('signup').submit();"></p>
-        <p><a href="login.php">login</a></p>
+        <div onclick="document.getElementById('signup').submit();">Sign Up</div>
+        <p><a href="http://localhost:8888/everyday_coding/sns/public_html/login.php">login</a></p>
         <input type="hidden" name="token" value="<?= h($_SESSION['token']); ?>">
     </form>
 </body>

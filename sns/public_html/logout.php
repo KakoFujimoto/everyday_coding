@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $_SESSION = [];
 
     if (isset($_COOKIE[session_name()])) {
-        setcookie(sessoin_name(), '', time() - 86400, '/');
+        setcookie(session_name(), '', time() - 86400, '/');
     }
 
     session_destroy();
