@@ -9,5 +9,7 @@ class Index extends \MyApp\Controller
         if (!$this->isLoggedIn()) {
             //login
         }
+
+        // get users info
     }
 }

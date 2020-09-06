@@ -1,6 +1,6 @@
 <?php
 
-//　ユーザーの一覧表示
+// ユーザーの一覧表示
 
 require_once(__DIR__. '../config/config.php')
 
