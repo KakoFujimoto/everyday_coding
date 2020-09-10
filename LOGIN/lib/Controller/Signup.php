@@ -22,8 +22,15 @@ class Signup extends \MyApp\Controller
         try {
             $this->_validate();
         } catch (\MyApp\Exception\InvalidEmail $e) {
+            echo $e->getMessage();
+            exit;
         } catch (\MyApp\Exception\InvalidPassword $e) {
+            echo $e->getMessage();
+            exit;
         }
+
+        echo 'success';
+        exit;
         // create user
 
         //redirect to

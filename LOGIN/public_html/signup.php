@@ -16,10 +16,10 @@ $app->run();
 </head>
 
 <body>
-    <form action="" method="post">
+    <form action="" method="post" id="signup">
         <p><input type="text" name="email" placeholder="email"></p>
         <p><input type="password" name="password" placeholder="password"></p>
-        <p><input type="submit" value="Sign Up"></p>
+        <p><input type="submit" onclick="document.getElementById('signup').submit();" value="Sign Up"></p>
         <p><a href="login.php">log in</a></p>
     </form>
 </body>
