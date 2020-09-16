@@ -10,7 +10,7 @@ class User extends \MyApp\Model
         values (:email, :password, now(), now())");
         $res = $stmt->execute([
             ':email' => $values['email'],
-            ':password' => password_hash($values['password'], PASSWORD_DEFAULT),
+            ':password' => password_hash($values['password'], PASSWORD_DEFAULT)
         ]);
         if ($res === false) {
             throw new \MyApp\Exception\DuplicateEmail();
