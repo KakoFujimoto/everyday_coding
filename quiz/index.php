@@ -2,6 +2,24 @@
 
 require_once(__DIR__ . '/config.php');
 
+$quizSet = [];
+$quizSet[] = [
+    'q' => 'What is A?',
+    'a' => ['A0', 'A1', 'A2', 'A3']
+];
+$quizSet[] = [
+    'q' => 'What is B?',
+    'a' => ['B0', 'B1', 'B2', 'B3']
+];
+$quizSet[] = [
+    'q' => 'What is C?',
+    'a' => ['C0', 'C1', 'C2', 'C3']
+];
+$current_num = 0;
+
+$data = $quizSet[$current_num];
+shuffle($data['a']);
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -15,10 +33,13 @@ require_once(__DIR__ . '/config.php');
 
 <body>
     <div id="container">
-        <h1>Q.花沢類はどれ？</h1>
+        <h1>Q.<?= h($data['q']); ?></h1>
     </div>
     <ul>
-        <li class="answer">1</li>
+        <?php foreach ($data['a'] as $a) : ?>
+            <li class="answer"><?= h($a); ?></li>
+        <?php endforeach; ?>
+
         <li class="answer">2</li>
         <li class="answer">3</li>
         <li class="answer">4</li>
