@@ -1,6 +1,7 @@
 <?php
 
 require_once(__DIR__ . '/config.php');
+require_once(__DIR__ . '/Quiz.php');
 
 $quizSet = [];
 $quizSet[] = [
@@ -17,7 +18,9 @@ $quizSet[] = [
 ];
 $current_num = 0;
 
-$data = $quizSet[$current_num];
+$quiz = new MyApp\Quiz();
+
+$data = $quiz->getCurrentQuiz();
 shuffle($data['a']);
 
 ?>
