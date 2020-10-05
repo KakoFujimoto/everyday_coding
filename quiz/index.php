@@ -42,12 +42,10 @@ shuffle($data['a']);
         <?php foreach ($data['a'] as $a) : ?>
             <li class="answer"><?= h($a); ?></li>
         <?php endforeach; ?>
-
-        <li class="answer">2</li>
-        <li class="answer">3</li>
-        <li class="answer">4</li>
     </ul>
     <div id="btn" class="disabled">次の問題へ</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="quiz.js"></script>
 </body>
 
 </html>
