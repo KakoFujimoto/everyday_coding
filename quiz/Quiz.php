@@ -9,9 +9,16 @@ class Quiz
     public function __construct()
     {
         $this->_setup();
+
         if (!isset($_SESSION['current_num'])) {
             $_SESSION['current_num'] = 0;
         }
+    }
+
+    public function checkAnswer()
+    {
+        $correctAnswer = $this->_quizSet[$_SESSION['current_num']]['a'][0];
+        return $correctAnswer;
     }
 
     public function getCurrentQuiz()

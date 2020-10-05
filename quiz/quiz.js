@@ -8,6 +8,7 @@ $(function () {
         $.post('/_answer.php', {
 
         }).done(function (res) {
+            // alert(res.correct_answer);
             if (answer === res.correct_answer) {
                 // correct!
             } else {
@@ -15,4 +16,5 @@ $(function () {
             }
         });
     });
+
 });
